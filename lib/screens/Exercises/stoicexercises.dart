@@ -1,0 +1,28 @@
+import 'dart:ui';
+
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
+import 'package:flutter/widgets.dart';
+import 'package:stoicmonk/utilities/constants.dart';
+import 'package:stoicmonk/utilities/quotesbank.dart';
+
+class StoicExercises extends StatefulWidget {
+  const StoicExercises({Key key}) : super(key: key);
+
+  @override
+  _StoicExercisesState createState() => _StoicExercisesState();
+}
+
+class _StoicExercisesState extends State<StoicExercises> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.black,
+      child: Center(
+        child: QuoteAuthorStackedDisplayCard(author: "mantra",quote: "What a wonderful world",quoteBoxHeight: 200,),
+      ),
+    );
+  }
+}
+
