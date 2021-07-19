@@ -8,8 +8,7 @@ import 'package:stoicmonk/utilities/constants.dart';
 import 'package:stoicmonk/utilities/quotesbank.dart';
 
 class StoicExercises extends StatefulWidget {
-  const StoicExercises({Key key}) : super(key: key);
-
+  static String id = "StoicExercises";
   @override
   _StoicExercisesState createState() => _StoicExercisesState();
 }

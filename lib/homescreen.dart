@@ -1,12 +1,13 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:stoicmonk/screens/Exercises/stoicexercises.dart';
+import 'package:stoicmonk/screens/Quotes/stoicquotes.dart';
 import 'package:stoicmonk/utilities/constants.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key key}) : super(key: key);
-
+  static String id = "HomeScreen";
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
@@ -52,7 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   gradiantColor1: Colors.greenAccent,
                   gradiantColor2: Colors.yellowAccent,
                   title: "Stoic Quotes",
-                  screenRoute: (){Navigator.pushNamed(context, "StoicQuotes");},
+                  screenRoute: (){Navigator.pushNamed(context, StoicQuotesScreen.id);},
                 ),
                 SizedBox(
                   height: 16,
@@ -72,7 +73,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   gradiantColor1: Colors.amberAccent,
                   gradiantColor2: Colors.lightGreenAccent,
                   title: "Stoic Exercises",
-                  screenRoute: (){Navigator.pushNamed(context, "StoicExercises");},
+                  screenRoute: (){Navigator.pushNamed(context, StoicExercises.id);},
                 )
               ],
             ),

@@ -3,7 +3,8 @@ import 'welcomescreen.dart';
 import "homescreen.dart";
 import 'screens/Quotes/stoicquotes.dart';
 import 'package:flutter/material.dart';
-
+import 'registerationscreen.dart';
+import 'loginscreen.dart';
 void main() {
   runApp(MyApp());
 }
@@ -23,14 +24,14 @@ class MyApp extends StatelessWidget {
       // home: WelcomeScreen(),
 
 
-      initialRoute: 'WelcomeScreen',
+      initialRoute: WelcomeScreen.id,
       routes: {
-        'WelcomeScreen': (context) => WelcomeScreen(),
-        'HomeScreen' : (context) => HomeScreen(),
-        'StoicQuotes' : (context) => StoicQuotesScreen(),
-        'StoicExercises' : (context) => StoicExercises(),
-
-
+        WelcomeScreen.id: (context) => WelcomeScreen(),
+        HomeScreen.id : (context) => HomeScreen(),
+        StoicQuotesScreen.id : (context) => StoicQuotesScreen(),
+        StoicExercises.id : (context) => StoicExercises(),
+        RegistrationScreen.id : (context) => RegistrationScreen(),
+        LoginScreen.id : (context) => LoginScreen(),
       },
     );
   }

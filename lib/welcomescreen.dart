@@ -4,9 +4,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:stoicmonk/registerationscreen.dart';
 import 'utilities/constants.dart';
 
 class WelcomeScreen extends StatelessWidget {
+  static String id = "WelcomeScreen";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,7 +64,7 @@ class WelcomeScreen extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.pushNamed(context, "HomeScreen");
+          Navigator.pushNamed(context, RegistrationScreen.id);
         },
         child: Icon(Icons.arrow_downward), //TODO 1 : change this button to be more conspicuous
         backgroundColor: Colors.black,
