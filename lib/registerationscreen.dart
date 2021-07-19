@@ -12,10 +12,15 @@ class _RegistrationScreenState extends State<RegistrationScreen> with SingleTick
   @override
   void initState(){
     super.initState();
-    animationController = new AnimationController(vsync: this, duration: Duration(seconds: 1));
+    animationController = new AnimationController(vsync: this, duration: Duration(seconds: 7));
+    animationController.repeat();
+    print(animationController.value);
   }
-  
-  Widget build(BuildContext context) {
+  stopRotation(){animationController.stop();}
+  startRotation(){animationController.repeat();}
+
+
+    Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Padding(
@@ -24,17 +29,58 @@ class _RegistrationScreenState extends State<RegistrationScreen> with SingleTick
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            AnimatedBuilder(
-              animation: animationController,
-              child: Container(
-                height: 200.0,
-                child: Icon(
-                  FontAwesomeIcons.connectdevelop, size: 130,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                //Rotating Widget
+                Container(
+                  child: AnimatedBuilder(
+                    animation: animationController,
+                    child: Container(
+                      height: 200.0,
+                      // child: Image.network('https://flutter-examples.com/wp-content/uploads/2020/01/yin_yang.png',width: 150, height: 150, fit: BoxFit.contain,),
+                      child: Icon(
+                        FontAwesomeIcons.connectdevelop, size: 130,
+                      ),
+                    ),
+                    builder: (BuildContext context,  Widget _widget ){
+                      return Transform.rotate(angle: animationController.value*6.3,child: _widget,);
+                    },
+                  ),
                 ),
+                //Rotating Widget
+                Container(
+                  child: AnimatedBuilder(
+                    animation: animationController,
+                    child: Container(
+                      height: 200.0,
+                      // child: Image.network('https://flutter-examples.com/wp-content/uploads/2020/01/yin_yang.png',width: 150, height: 150, fit: BoxFit.contain,),
+                      child: Icon(
+                        FontAwesomeIcons.connectdevelop, size: 130,
+                      ),
+                    ),
+                    builder: (BuildContext context,  Widget _widget ){
+                      return Transform.rotate(angle: animationController.value*6.3,child: _widget,);
+                    },
+                  ),
+                ),
+              ],
+            ),
+            //Rotating Widget
+            Container(
+              child: AnimatedBuilder(
+                animation: animationController,
+                child: Container(
+                  height: 200.0,
+                  // child: Image.network('https://flutter-examples.com/wp-content/uploads/2020/01/yin_yang.png',width: 150, height: 150, fit: BoxFit.contain,),
+                  child: Icon(
+                    FontAwesomeIcons.connectdevelop, size: 130,
+                  ),
+                ),
+                builder: (BuildContext context,  Widget _widget ){
+                  return Transform.rotate(angle: animationController.value*6.3,child: _widget,);
+                },
               ),
-              builder: (BuildContext context,Widget _widget ){
-                return new Transform.rotate(angle: animationController.value*6.3,child: _widget,);
-              },
             ),
             SizedBox(
               height: 48.0,
@@ -95,6 +141,9 @@ class _RegistrationScreenState extends State<RegistrationScreen> with SingleTick
                 elevation: 5.0,
                 child: MaterialButton(
                   onPressed: () {
+                    // stopRotation();
+                    startRotation();
+                    print(animationController.value);
                     //Implement registration functionality.
                   },
                   minWidth: 200.0,
