@@ -5,7 +5,13 @@ import 'screens/Quotes/stoicquotes.dart';
 import 'package:flutter/material.dart';
 import 'registerationscreen.dart';
 import 'loginscreen.dart';
-void main() {
+import 'package:firebase_core/firebase_core.dart';
+
+void main() async {
+  // Ensure that Firebase is initialized
+  WidgetsFlutterBinding.ensureInitialized();
+  // Initialize Firebase
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
