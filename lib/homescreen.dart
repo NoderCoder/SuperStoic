@@ -5,6 +5,8 @@ import 'package:stoicmonk/screens/Exercises/stoicexercises.dart';
 import 'package:stoicmonk/screens/Quotes/stoicquotes.dart';
 import 'package:stoicmonk/utilities/constants.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
 
 class HomeScreen extends StatefulWidget {
   static String id = "HomeScreen";
@@ -13,6 +15,31 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+
+  @override
+  void initState() {
+    super.initState();
+    getCurretntUser();
+  }
+
+  // Firebase setup
+  final _auth = FirebaseAuth.instance;
+  User loggedInUser;
+
+  void getCurretntUser() async {
+    try {
+    final user = await _auth.currentUser;
+    if (user != null){
+      loggedInUser = user;
+      print(loggedInUser.email);
+    }}
+    catch(e){print(e);}
+  }
+
+
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

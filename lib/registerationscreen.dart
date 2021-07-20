@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:stoicmonk/homescreen.dart';
+import 'package:stoicmonk/loginscreen.dart';
 
 class RegistrationScreen extends StatefulWidget {
   static String id = "RegistrationScreen";
@@ -13,7 +14,6 @@ class RegistrationScreen extends StatefulWidget {
 
 class _RegistrationScreenState extends State<RegistrationScreen> with SingleTickerProviderStateMixin{
   final _auth = FirebaseAuth.instance;
-
   String email;
   String password;
   AnimationController animationController;
@@ -24,7 +24,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> with SingleTick
     animationController.repeat();
     print(animationController.value);
   }
-  stopRotation(){animationController.stop();}
+  stopRotation() => animationController.stop();
+  // stopRotation(){animationController.stop();}
   startRotation(){animationController.repeat();}
 
 
@@ -47,10 +48,9 @@ class _RegistrationScreenState extends State<RegistrationScreen> with SingleTick
               child: AnimatedBuilder(
                 animation: animationController,
                 child: Container(
-                  height: 200.0,
                   // child: Image.network('https://flutter-examples.com/wp-content/uploads/2020/01/yin_yang.png',width: 150, height: 150, fit: BoxFit.contain,),
                   child: Icon(
-                    FontAwesomeIcons.connectdevelop, size: 130,
+                    FontAwesomeIcons.connectdevelop, size: 30,
                   ),
                 ),
                 builder: (BuildContext context,  Widget _widget ){
@@ -127,7 +127,6 @@ class _RegistrationScreenState extends State<RegistrationScreen> with SingleTick
                       final newUser = await _auth
                           .createUserWithEmailAndPassword(
                           email: email, password: password);
-                      print(animationController.value);
                       if(newUser != null){
                         Navigator.pushNamed(context, HomeScreen.id);
                       }
@@ -143,9 +142,19 @@ class _RegistrationScreenState extends State<RegistrationScreen> with SingleTick
                 ),
               ),
             ),
+            TextButton(onPressed: (){Navigator.pushNamed(context, LoginScreen.id);},
+                child: Text("Already a user ? Log In "),),
           ],
         ),
       ),
     );
   }
 }
+
+
+
+//TODO: Change UI
+//TODO: password min 6 conditions
+//TODO: other user info fields
+//TODO: login via google
+//TODO: login via facebook
