@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:stoicmonk/homescreen.dart';
 import 'package:stoicmonk/loginscreen.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class RegistrationScreen extends StatefulWidget {
   static String id = "RegistrationScreen";
@@ -24,10 +25,26 @@ class _RegistrationScreenState extends State<RegistrationScreen> with SingleTick
     animationController.repeat();
     print(animationController.value);
   }
+  //------Functions
+  //Animator
   stopRotation() => animationController.stop();
   // stopRotation(){animationController.stop();}
   startRotation(){animationController.repeat();}
+  //Google sign in
 
+  Future<UserCredential> signInWithGoogle() async {
+    // Trigger the authentication flow
+    final GoogleSignInAccount googleUser = await GoogleSignIn().signIn();
+    // Obtain the auth details from the request
+    final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
+    // Create a new credential
+    final credential = GoogleAuthProvider.credential(
+      accessToken: googleAuth.accessToken,
+      idToken: googleAuth.idToken,
+    );
+    // Once signed in, return the UserCredential
+    return await FirebaseAuth.instance.signInWithCredential(credential);
+  }
 
     Widget build(BuildContext context) {
     return Scaffold(
@@ -58,6 +75,29 @@ class _RegistrationScreenState extends State<RegistrationScreen> with SingleTick
                 },
               ),
             ),
+
+
+            //Gogle sign in
+
+            Container(
+              child: MaterialButton(
+                color: Colors.deepOrange,
+                child: Icon(FontAwesomeIcons.google, size: 32,),
+                onPressed: (){
+                  final user = signInWithGoogle();
+                  if (user != null) {
+                    print(user);
+                    Navigator.pushNamed(context, HomeScreen.id);
+                  }},
+              ),
+            ),
+
+
+
+
+
+
+
             SizedBox(
               height: 48.0,
             ),
@@ -150,6 +190,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> with SingleTick
     );
   }
 }
+
+
 
 
 
