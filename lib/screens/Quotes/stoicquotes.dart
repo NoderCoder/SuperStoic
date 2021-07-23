@@ -1,9 +1,6 @@
 
 
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:stoicmonk/utilities/quotesbank.dart';
 import 'package:stoicmonk/utilities/constants.dart';
 

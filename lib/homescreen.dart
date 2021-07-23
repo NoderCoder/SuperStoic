@@ -111,6 +111,7 @@ class _HomeScreenState extends State<HomeScreen> {
     
   }
 }
+
 //Feature tile discribing features
 class FeatureTile extends StatelessWidget {
   FeatureTile(
