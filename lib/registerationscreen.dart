@@ -1,12 +1,16 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:stoicmonk/homescreen.dart';
 import 'package:stoicmonk/loginscreen.dart';
+import 'package:stoicmonk/welcomescreen.dart';
+import 'utilities/manntoolbox.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class RegistrationScreen extends StatefulWidget {
   static String id = "RegistrationScreen";
+
 
 
   @override
@@ -15,6 +19,7 @@ class RegistrationScreen extends StatefulWidget {
 
 class _RegistrationScreenState extends State<RegistrationScreen> with SingleTickerProviderStateMixin{
   final _auth = FirebaseAuth.instance;
+  MannToolBox _mannToolBox = MannToolBox();
   String email;
   String password;
   AnimationController animationController;
@@ -128,7 +133,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> with SingleTick
             SizedBox(
               height: 8.0,
             ),
-            TextField(
+            TextField(  //Password
               obscureText: true,
               textAlign: TextAlign.center,
               onChanged: (value) {
@@ -163,6 +168,34 @@ class _RegistrationScreenState extends State<RegistrationScreen> with SingleTick
                 elevation: 5.0,
                 child: MaterialButton(
                   onPressed: () async {
+                    // PAssword Check
+                    String validatedPasswordOutput = _mannToolBox.validatePassword(password);
+                    if (password == validatedPasswordOutput){
+                      password = validatedPasswordOutput;
+                    }
+                    else
+                    {
+                      showDialog(
+                        context: context,
+                        builder: (_) => CupertinoAlertDialog(
+                          title: Text("Password too small :/"),
+                          content: Text(validatedPasswordOutput),
+                          actions: [
+                            TextButton(
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                                child: Text("Try again"))
+                          ],
+                        ),
+                        barrierDismissible: true,
+                        barrierColor: Colors.black12,
+                      );
+
+                    }
+
+                    //-----
+
                     try {
                       final newUser = await _auth
                           .createUserWithEmailAndPassword(
@@ -171,7 +204,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> with SingleTick
                         Navigator.pushNamed(context, HomeScreen.id);
                       }
                     }
-                    catch(e){print(e);}//Implement registration functionality.
+                    catch(e){print(e);
+                    }//Implement registration functionality.
                   },
                   minWidth: 200.0,
                   height: 42.0,
@@ -192,7 +226,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> with SingleTick
 }
 
 
+void passwordValidationCheck (String value){
+  //logic of password validator
 
+}
 
 
 //TODO: Change UI

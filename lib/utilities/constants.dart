@@ -103,3 +103,4 @@ class QuoteAuthorStackedDisplayCard extends StatelessWidget {
   }
 }
 //-----------------------------------------------------------
+//------------Password validator----------------------------
