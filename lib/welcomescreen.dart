@@ -6,6 +6,7 @@ import 'package:flutter/widgets.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:stoicmonk/registerationscreen.dart';
 import 'utilities/constants.dart';
+import 'screens/Introduction/introduction_animation_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   static String id = "WelcomeScreen";

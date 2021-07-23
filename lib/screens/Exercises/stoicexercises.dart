@@ -18,10 +18,16 @@ class _StoicExercisesState extends State<StoicExercises> {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.black,
-      child: Center(
-        child: QuoteAuthorStackedDisplayCard(author: "mantra",quote: "What a wonderful world",quoteBoxHeight: 200,),
+      child: Column(
+        children: [
+
+          Center(
+            child: QuoteAuthorStackedDisplayCard(author: "mantra",quote: "What a wonderful world",quoteBoxHeight: 200,),
+          ),
+        ],
       ),
     );
   }
 }
+
 
