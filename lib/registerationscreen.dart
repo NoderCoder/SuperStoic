@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:stoicmonk/homescreen.dart';
 import 'package:stoicmonk/loginscreen.dart';
+import 'package:stoicmonk/utilities/constants.dart';
 import 'package:stoicmonk/welcomescreen.dart';
 import 'utilities/manntoolbox.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -53,7 +54,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> with SingleTick
 
     Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: kScaffoldBackgroundColor,
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.0),
         child: Column(
@@ -121,11 +122,11 @@ class _RegistrationScreenState extends State<RegistrationScreen> with SingleTick
                   borderRadius: BorderRadius.all(Radius.circular(32.0)),
                 ),
                 enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.blueAccent, width: 1.0),
+                  borderSide: BorderSide(color: kPrimaryColor, width: 1.0),
                   borderRadius: BorderRadius.all(Radius.circular(32.0)),
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.blueAccent, width: 2.0),
+                  borderSide: BorderSide(color: kPrimaryColor, width: 2.0),
                   borderRadius: BorderRadius.all(Radius.circular(32.0)),
                 ),
               ),
@@ -148,11 +149,11 @@ class _RegistrationScreenState extends State<RegistrationScreen> with SingleTick
                   borderRadius: BorderRadius.all(Radius.circular(32.0)),
                 ),
                 enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.blueAccent, width: 1.0),
+                  borderSide: BorderSide(color: kPrimaryColor, width: 1.0),
                   borderRadius: BorderRadius.all(Radius.circular(32.0)),
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.blueAccent, width: 2.0),
+                  borderSide: BorderSide(color: kPrimaryColor, width: 2.0),
                   borderRadius: BorderRadius.all(Radius.circular(32.0)),
                 ),
               ),
@@ -163,7 +164,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> with SingleTick
             Padding(
               padding: EdgeInsets.symmetric(vertical: 16.0),
               child: Material(
-                color: Colors.blueAccent,
+                color: kPrimaryColor,
                 borderRadius: BorderRadius.all(Radius.circular(30.0)),
                 elevation: 5.0,
                 child: MaterialButton(
@@ -217,7 +218,15 @@ class _RegistrationScreenState extends State<RegistrationScreen> with SingleTick
               ),
             ),
             TextButton(onPressed: (){Navigator.pushNamed(context, LoginScreen.id);},
-                child: Text("Already a user ? Log In "),),
+                child: RichText(text: TextSpan(
+                  // style: DefaultTextStyle.of(context).style,
+                  children: [
+                    TextSpan(text: "Already a user ?", style: TextStyle(color: kLightPrimaryColor)),
+                    TextSpan(text: " Log In", style: TextStyle(color: kPrimaryColor)),
+                  ]
+                ))
+                // Text("Already a user ? Log In "),
+            ),
           ],
         ),
       ),

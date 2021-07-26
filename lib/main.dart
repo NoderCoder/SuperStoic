@@ -1,3 +1,5 @@
+import 'package:stoicmonk/utilities/constants.dart';
+
 import 'screens/Exercises/stoicexercises.dart';
 import 'welcomescreen.dart';
 import "homescreen.dart";
@@ -27,7 +29,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'StoicHelp',
       theme: ThemeData(
-        scaffoldBackgroundColor: Colors.white, //todo Cosmetic need to change this
+        scaffoldBackgroundColor: kScaffoldBackgroundColor,
+        primaryColor: kPrimaryColor,
+        primaryColorLight: kLightPrimaryColor,//todo Cosmetic need to change this
         visualDensity: VisualDensity.adaptivePlatformDensity,
 
       ),
