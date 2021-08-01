@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:stoicmonk/homescreen.dart';
 
+const kPrimaryColor = Color(0xff121F33);
+const kLightPrimaryColor = Color(0xffa7a5a3);
+const kScaffoldBackgroundColor = Color(0xffF7EBE1);
+
 const lTextStyle = TextStyle(fontSize: 48, fontFamily: "Pacifico");
 const rTextStyle =
     TextStyle(fontSize: 50, fontFamily: "Calid", color: Colors.black87);

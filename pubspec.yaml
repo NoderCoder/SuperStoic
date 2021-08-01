@@ -39,6 +39,9 @@ dependencies:
   #3rd part sign ins
   google_sign_in: "^4.5.1"
 
+  #Animations
+  animations: ^2.0.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -57,6 +60,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
+    - assets/introduction_animation/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

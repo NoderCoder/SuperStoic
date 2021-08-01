@@ -1,11 +1,17 @@
+import 'package:stoicmonk/utilities/constants.dart';
+
 import 'screens/Exercises/stoicexercises.dart';
 import 'welcomescreen.dart';
 import "homescreen.dart";
 import 'screens/Quotes/stoicquotes.dart';
-import 'package:flutter/material.dart';
 import 'registerationscreen.dart';
 import 'loginscreen.dart';
+import 'screens/Introduction/introduction_animation_screen.dart';
+
+
+
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
 
 void main() async {
   // Ensure that Firebase is initialized
@@ -23,14 +29,16 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'StoicHelp',
       theme: ThemeData(
-        scaffoldBackgroundColor: Colors.white, //todo Cosmetic need to change this
+        scaffoldBackgroundColor: kScaffoldBackgroundColor,
+        primaryColor: kPrimaryColor,
+        primaryColorLight: kLightPrimaryColor,//todo Cosmetic need to change this
         visualDensity: VisualDensity.adaptivePlatformDensity,
 
       ),
       // home: WelcomeScreen(),
 
 
-      initialRoute: WelcomeScreen.id,
+      initialRoute: IntroductionAnimationScreen.id,
       routes: {
         WelcomeScreen.id: (context) => WelcomeScreen(),
         HomeScreen.id : (context) => HomeScreen(),
@@ -38,6 +46,8 @@ class MyApp extends StatelessWidget {
         StoicExercises.id : (context) => StoicExercises(),
         RegistrationScreen.id : (context) => RegistrationScreen(),
         LoginScreen.id : (context) => LoginScreen(),
+
+        IntroductionAnimationScreen.id : (context) => IntroductionAnimationScreen(),
       },
     );
   }
