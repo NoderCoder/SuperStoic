@@ -81,7 +81,7 @@ class WelcomeView extends StatelessWidget {
                 padding:
                     EdgeInsets.only(left: 64, right: 64, top: 16, bottom: 16),
                 child: Text(
-                  "Take your next step guided by ancient wisdom of Stoics to reinvent yuorself",
+                  "Take your next step guided by ancient wisdom of Stoics to reinvent yourself !",
                   textAlign: TextAlign.center,
                 ),
               ),

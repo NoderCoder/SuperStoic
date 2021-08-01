@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:stoicmonk/homescreen.dart';
 import 'package:stoicmonk/registerationscreen.dart';
+import 'package:stoicmonk/utilities/constants.dart';
 
 class LoginScreen extends StatefulWidget {
   static String id = "LoginScreen";
@@ -25,7 +26,7 @@ class _LoginScreenState extends State<LoginScreen>
 
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: kScaffoldBackgroundColor,
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.0),
         child: Column(
@@ -54,12 +55,12 @@ class _LoginScreenState extends State<LoginScreen>
                 ),
                 enabledBorder: OutlineInputBorder(
                   borderSide:
-                      BorderSide(color: Colors.lightBlueAccent, width: 1.0),
+                      BorderSide(color: kPrimaryColor, width: 1.0),
                   borderRadius: BorderRadius.all(Radius.circular(32.0)),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderSide:
-                      BorderSide(color: Colors.lightBlueAccent, width: 2.0),
+                      BorderSide(color: kPrimaryColor, width: 2.0),
                   borderRadius: BorderRadius.all(Radius.circular(32.0)),
                 ),
               ),
@@ -83,12 +84,12 @@ class _LoginScreenState extends State<LoginScreen>
                 ),
                 enabledBorder: OutlineInputBorder(
                   borderSide:
-                      BorderSide(color: Colors.lightBlueAccent, width: 1.0),
+                      BorderSide(color: kPrimaryColor, width: 1.0),
                   borderRadius: BorderRadius.all(Radius.circular(32.0)),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderSide:
-                      BorderSide(color: Colors.lightBlueAccent, width: 2.0),
+                      BorderSide(color: kPrimaryColor, width: 2.0),
                   borderRadius: BorderRadius.all(Radius.circular(32.0)),
                 ),
               ),
@@ -99,7 +100,7 @@ class _LoginScreenState extends State<LoginScreen>
             Padding(
               padding: EdgeInsets.symmetric(vertical: 16.0),
               child: Material(
-                color: Colors.lightBlueAccent,
+                color: kPrimaryColor,
                 borderRadius: BorderRadius.all(Radius.circular(30.0)),
                 elevation: 5.0,
                 child: MaterialButton(
@@ -119,7 +120,7 @@ class _LoginScreenState extends State<LoginScreen>
                     {print(e);
                     showDialog(
                       context: context,
-                      builder: (_) => AlertDialog(
+                      builder: (_) => AlertDialog( //TODO : change to ios
                         title: Text("No User found :("),
                         content: Text(
                             "Sorry we cant find any profile associated with this email id, please check for typos and try again or join us by registering again"),
@@ -140,7 +141,7 @@ class _LoginScreenState extends State<LoginScreen>
                   minWidth: 200.0,
                   height: 42.0,
                   child: Text(
-                    'Log In',
+                    'Log In',style: TextStyle(color: kLightPrimaryColor),
                   ),
                 ),
               ),
