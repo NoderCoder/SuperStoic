@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "450649122783",
+    "project_id": "stoichelper",
+    "storage_bucket": "stoichelper.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:450649122783:android:d742d3a92cf8c5bd9f466a",
+        "android_client_info": {
+          "package_name": "mannsutariya.com.stoic_helper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "450649122783-7ulg5t7pni80pml6dv9v1shjul8dt4hq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "mannsutariya.com.stoic_helper",
+            "certificate_hash": "7daaac225e801f7f0620a66d76a0a785894adb72"
+          }
+        },
+        {
+          "client_id": "450649122783-3bkdq7khcve1v15f0u8s01cjc3njc43o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIS9yo7qjTSEqAT8MfylWi9czLaHSxdSQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "450649122783-3bkdq7khcve1v15f0u8s01cjc3njc43o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
