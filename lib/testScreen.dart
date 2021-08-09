@@ -1,20 +1,20 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:stoicmonk/screens/Exercises/stoicexercises.dart';
+import 'package:stoicmonk/screens/Exercises/stoicjourneyintro.dart';
 import 'package:stoicmonk/screens/Quotes/stoicquotes.dart';
 import 'package:stoicmonk/utilities/constants.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 
-class HomeScreen extends StatefulWidget {
-  static String id = "HomeScreen";
+class TestScreen extends StatefulWidget {
+  static String id = "TestScreen";
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _TestScreenState createState() => _TestScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _TestScreenState extends State<TestScreen> {
 
   @override
   void initState() {

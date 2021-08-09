@@ -1,6 +1,7 @@
 import 'package:stoicmonk/utilities/constants.dart';
 
-import 'screens/Exercises/stoicexercises.dart';
+import 'screens/Exercises/stoicjourneyintro.dart';
+import 'screens/Homescreen/homescreen.dart';
 import 'welcomescreen.dart';
 import "testScreen.dart";
 import 'screens/Quotes/stoicquotes.dart';
@@ -46,6 +47,7 @@ class MyApp extends StatelessWidget {
         StoicExercises.id : (context) => StoicExercises(),
         RegistrationScreen.id : (context) => RegistrationScreen(),
         LoginScreen.id : (context) => LoginScreen(),
+        TestScreen.id : (context) => TestScreen(),
 
         IntroductionAnimationScreen.id : (context) => IntroductionAnimationScreen(),
       },

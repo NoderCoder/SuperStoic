@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:stoicmonk/screens/Homescreen/homescreen.dart';
 import 'package:stoicmonk/testScreen.dart';
 import 'package:stoicmonk/loginscreen.dart';
 import 'package:stoicmonk/utilities/constants.dart';
